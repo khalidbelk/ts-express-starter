@@ -9,8 +9,23 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
+# Check if a command exists in the user's PATH
 command_exists() {
     command -v "$1" >/dev/null 2>&1
+}
+
+# Build the server and provide instructions for running it
+build_server() {
+    if npm run build; then
+        echo -e "${GREEN}Server built succesfully !${NC}\n"
+        echo -e "Access the ${GREEN}project${NC} directory and use one of these commands to run it: \n"
+        echo -e "\t Development mode:                                  npm run dev"
+        echo -e "\t Production mode (compiled server):                 npm start"
+        return 0
+    else
+        echo -e "${RED}Failed to build the server.${NC}\n"
+        return 1
+    fi
 }
 
 # Check if Node.js is installed
@@ -74,19 +89,6 @@ mkdir src && mv ../static/index.ts src/index.ts && mv ../static/tsconfig.json ./
 
 # Update package.json scripts
 jq '.scripts = {"start": "node dist/index.js", "dev": "ts-node-dev --respawn --transpile-only src/index.ts", "build": "tsc"}' package.json > temp.json && mv temp.json package.json
-
-function build_server() {
-    if npm run build; then
-        echo -e "${GREEN}Server built succesfully !${NC}\n"
-        echo -e "Access the ${GREEN}project${NC} directory and use one of these commands to run it: \n"
-        echo -e "\t Development mode:                                  npm run dev"
-        echo -e "\t Production mode (compiled server):                 npm start"
-        return 0
-    else
-        echo -e "${RED}Failed to build the server.${NC}\n"
-        return 1
-    fi
-}
 
 # Install project deps & build the server
 if npm i; then
