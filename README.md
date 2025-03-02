@@ -4,13 +4,19 @@ This script sets up an **Express.js** with **TypeScript** project with basic dep
 
 ## Usage
 
-First, make sure the script has **execution** permissions:
+1. **Clone the repository** :
+
+```
+git clone git@github.com:khalidbelk/ts-express-starter.git
+```
+
+2. Ensure the script has **execution** permissions :
 
 ```
 sudo chmod +x starter.sh
 ```
 
-Then run the script :
+3. **Run** the script :
 
 ```
 ./starter.sh
