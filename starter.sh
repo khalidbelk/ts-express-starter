@@ -17,10 +17,10 @@ command_exists() {
 # Build the server and provide instructions for running it
 build_server() {
     if npm run build; then
-        echo -e "${GREEN}Server built succesfully !${NC}\n"
+        echo -e "${GREEN}Server built successfully !${NC}\n"
         echo -e "Access the ${GREEN}project${NC} directory and use one of these commands to run it: \n"
-        echo -e "\t Development mode:                                  npm run dev"
-        echo -e "\t Production mode (compiled server):                 npm start"
+        echo -e "\t Development mode:                           npm run dev"
+        echo -e "\t Production mode (compiled):                 npm start\n"
         return 0
     else
         echo -e "${RED}Failed to build the server.${NC}\n"
@@ -33,7 +33,7 @@ if ! command_exists node; then
     echo -e "${RED}Error: Node.js is not installed. Please install Node.js to continue.${NC}\n"
     exit 1
 else
-    echo -e "${GREEN}Node is installed. Proceding to create the project directory...${NC}\n"
+    echo -e "${GREEN}Node is installed. Proceeding to create the project directory...${NC}\n"
 fi
 
 # Check if NPM is installed
