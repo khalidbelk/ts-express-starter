@@ -4,16 +4,19 @@ This script sets up an **Express.js** with **TypeScript** project with basic dep
 
 ## Usage
 
-First, make sure the script have execution permissions:
+First, make sure the script has **execution** permissions:
 
-```sudo chmod +x starter.sh```
+```
+sudo chmod +x starter.sh
+```
 
 Then run the script :
 
-```./starter.sh```
+```
+./starter.sh
+```
 
 This will create a directory named ```project/``` containing the **server** source files and installed dependencies ready to be launched.
-
 
 ### Running the Server
 
