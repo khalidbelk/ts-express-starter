@@ -1,0 +1,9 @@
+# Env files
+.env
+!.env.example
+
+# Node modules
+node_modules/
+
+# Build artifact
+dist/
